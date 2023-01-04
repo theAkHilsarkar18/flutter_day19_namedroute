@@ -5,9 +5,11 @@ import 'homeScreen.dart';
 
 void main() {
   runApp(
-    MaterialApp(debugShowCheckedModeBanner: false, routes: {
+    MaterialApp(debugShowCheckedModeBanner: false,
+        initialRoute: 'second',
+        routes: {
       '/': (context) => Home(),
-      'second' : (context) => Second(),
+      'second': (context) => Second(),
     }),
   );
 }

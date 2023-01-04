@@ -46,7 +46,7 @@ class _HomeState extends State<Home> {
           centerTitle: true,
           title: Text("apple",
               style: TextStyle(
-                  color: Colors.black, letterSpacing: 4, fontSize: 23)),
+                  color: Colors.black, letterSpacing: 4, fontSize: 23,fontWeight: FontWeight.bold)),
           actions: [
             Padding(
               padding: const EdgeInsets.only(top: 18, right: 10),
@@ -380,7 +380,7 @@ class _HomeState extends State<Home> {
                               Image.asset("assets/images/ipad4.png",
                                   fit: BoxFit.cover, height: 190, width: 200),
                               SizedBox(height: 20,),
-                              Text("\$ 60.00",
+                              Text("\$ 100.00",
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
@@ -391,7 +391,7 @@ class _HomeState extends State<Home> {
                                     padding: const EdgeInsets.only(
                                         left: 20, top: 5, bottom: 2),
                                     child: Text(
-                                      "iWatch",
+                                      "iPad",
                                       style: TextStyle(
                                           fontSize: 25, color: Colors.black),
                                     ),
@@ -437,6 +437,56 @@ class _HomeState extends State<Home> {
 
 
                     ],
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Container(
+                    height: 80,
+                    width: 350,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: c4,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            border: Border.all(
+                              color: Colors.grey,style: BorderStyle.solid,width: 1,
+                            ),
+                          ),
+                          child: Icon(Icons.favorite_border,size: 40,color: Color(0xff362706) ),
+                        ),
+                        Container(
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            border: Border.all(
+                              color: Colors.grey,style: BorderStyle.solid,width: 1,
+                            ),
+                          ),
+                          child: Icon(Icons.home,size: 40,color: Color(0xff362706) ),
+                        ),
+                        Container(
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            border: Border.all(
+                              color: Colors.grey,style: BorderStyle.solid,width: 1,
+                            ),
+                          ),
+                          child: Icon(Icons.menu,size: 40,color: Color(0xff362706) ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],

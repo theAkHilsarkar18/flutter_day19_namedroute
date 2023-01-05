@@ -60,6 +60,7 @@ class _HomeState extends State<Home> {
         ),
         backgroundColor: c3,
         body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             //Text("Explore Product",style: TextStyle(color: c1,fontSize: 24,letterSpacing: 2),),
             //
@@ -141,7 +142,6 @@ class _HomeState extends State<Home> {
                 Row(
                   children: [
                     SizedBox(
-                      height: 50,
                       width: 20,
                     ),
                     Text("Cards",
@@ -161,13 +161,14 @@ class _HomeState extends State<Home> {
 
                 // product list horizontal scroll
                 SingleChildScrollView(
+                  physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(12),
                         child: Container(
-                          height: 380,
+                          height: 400,
                           width: 210,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
@@ -175,8 +176,36 @@ class _HomeState extends State<Home> {
                           ),
                           child: Column(
                             children: [
+                              //row for like and add to cart button
+                              Padding(
+                                padding: EdgeInsets.all(5),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      height: 40,
+                                      width: 40,
+                                      decoration: BoxDecoration(
+                                      ),
+                                      child: FloatingActionButton(
+                                          onPressed: () {},
+                                          child: Icon(Icons.favorite),
+                                          backgroundColor: c3),
+                                    ),
+                                    Container(
+                                      height: 40,
+                                      width: 40,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: c3,
+                                      ),
+                                      child: Icon(Icons.shopping_bag,color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
                               Image.asset("assets/images/iphone13.png",
-                                  fit: BoxFit.cover, height: 250, width: 200),
+                                  fit: BoxFit.cover, height: 220, width: 180),
                               Text("\$ 120.00",
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -234,7 +263,7 @@ class _HomeState extends State<Home> {
                       Padding(
                         padding: const EdgeInsets.all(12),
                         child: Container(
-                          height: 380,
+                          height: 400,
                           width: 210,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
@@ -242,8 +271,35 @@ class _HomeState extends State<Home> {
                           ),
                           child: Column(
                             children: [
+                              Padding(
+                                padding: EdgeInsets.all(5),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      height: 40,
+                                      width: 40,
+                                      decoration: BoxDecoration(
+                                      ),
+                                      child: FloatingActionButton(
+                                          onPressed: () {},
+                                          child: Icon(Icons.favorite),
+                                          backgroundColor: c3),
+                                    ),
+                                    Container(
+                                      height: 40,
+                                      width: 40,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: c3,
+                                      ),
+                                      child: Icon(Icons.shopping_bag,color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
                               Image.asset("assets/images/a4.png",
-                                  fit: BoxFit.cover, height: 250, width: 200),
+                                  fit: BoxFit.cover, height: 220, width: 180),
                               Text("\$ 30.00",
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -301,7 +357,7 @@ class _HomeState extends State<Home> {
                       Padding(
                         padding: const EdgeInsets.all(12),
                         child: Container(
-                          height: 380,
+                          height: 400,
                           width: 210,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
@@ -309,8 +365,35 @@ class _HomeState extends State<Home> {
                           ),
                           child: Column(
                             children: [
+                              Padding(
+                                padding: EdgeInsets.all(5),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      height: 40,
+                                      width: 40,
+                                      decoration: BoxDecoration(
+                                      ),
+                                      child: FloatingActionButton(
+                                          onPressed: () {},
+                                          child: Icon(Icons.favorite),
+                                          backgroundColor: c3),
+                                    ),
+                                    Container(
+                                      height: 40,
+                                      width: 40,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: c3,
+                                      ),
+                                      child: Icon(Icons.shopping_bag,color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
                               Image.asset("assets/images/watch3.png",
-                                  fit: BoxFit.cover, height: 250, width: 200),
+                                  fit: BoxFit.cover, height: 220, width: 180),
                               Text("\$ 60.00",
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -368,7 +451,7 @@ class _HomeState extends State<Home> {
                       Padding(
                         padding: const EdgeInsets.all(12),
                         child: Container(
-                          height: 380,
+                          height: 400,
                           width: 210,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
@@ -376,7 +459,34 @@ class _HomeState extends State<Home> {
                           ),
                           child: Column(
                             children: [
-                              SizedBox(height: 40,),
+                              Padding(
+                                padding: EdgeInsets.all(5),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      height: 40,
+                                      width: 40,
+                                      decoration: BoxDecoration(
+                                      ),
+                                      child: FloatingActionButton(
+                                          onPressed: () {},
+                                          child: Icon(Icons.favorite),
+                                          backgroundColor: c3),
+                                    ),
+                                    Container(
+                                      height: 40,
+                                      width: 40,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: c3,
+                                      ),
+                                      child: Icon(Icons.shopping_bag,color: Colors.white),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 10,),
                               Image.asset("assets/images/ipad4.png",
                                   fit: BoxFit.cover, height: 190, width: 200),
                               SizedBox(height: 20,),
@@ -439,57 +549,62 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                 ),
-
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Container(
-                    height: 80,
-                    width: 350,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: c4,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(
-                              color: Colors.grey,style: BorderStyle.solid,width: 1,
-                            ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  height: 80,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: c4,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        height: 55,
+                        width: 55,
+                        decoration: BoxDecoration(
+                          color: c3,
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(
+                            color: Colors.grey,style: BorderStyle.solid,width: 1,
                           ),
-                          child: Icon(Icons.favorite_border,size: 40,color: Color(0xff362706) ),
                         ),
-                        Container(
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(
-                              color: Colors.grey,style: BorderStyle.solid,width: 1,
-                            ),
+                        child: Icon(Icons.favorite_border,size: 35,color: Color(0xff362706) ),
+                      ),
+                      Container(
+                        height: 55,
+                        width: 55,
+                        decoration: BoxDecoration(
+                          color: c3,
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(
+                            color: Colors.grey,style: BorderStyle.solid,width: 1,
                           ),
-                          child: Icon(Icons.home,size: 40,color: Color(0xff362706) ),
                         ),
-                        Container(
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            border: Border.all(
-                              color: Colors.grey,style: BorderStyle.solid,width: 1,
-                            ),
+                        child: Icon(Icons.home,size: 35,color: Color(0xff362706) ),
+                      ),
+                      Container(
+                        height: 55,
+                        width: 55,
+                        decoration: BoxDecoration(
+                          color: c3,
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(
+                            color: Colors.grey,style: BorderStyle.solid,width: 1,
                           ),
-                          child: Icon(Icons.menu,size: 40,color: Color(0xff362706) ),
                         ),
-                      ],
-                    ),
+                        child: Icon(Icons.menu,size: 35,color: Color(0xff362706) ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
+              ),
             ),
           ],
         ),

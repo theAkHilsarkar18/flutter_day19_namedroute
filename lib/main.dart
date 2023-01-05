@@ -6,7 +6,7 @@ import 'homeScreen.dart';
 void main() {
   runApp(
     MaterialApp(debugShowCheckedModeBanner: false,
-        initialRoute: 'second',
+        //initialRoute: 'second',
         routes: {
       '/': (context) => Home(),
       'second': (context) => Second(),

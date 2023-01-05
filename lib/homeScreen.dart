@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_day19_namedroute/modelDart.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -25,6 +26,35 @@ class _HomeState extends State<Home> {
   double borderWidth2 = 2;
 
   //
+  //
+  //
+  /* Product details*/
+  //
+  /*iphone 13 details*/
+  Image iphone13Img = Image.asset("assets/images/iphone13.png",fit: BoxFit.cover, height: 220, width: 180);
+  String iphone13Price = "\$ 120.00";
+  String iphone13Details =
+      "256GB,\nSuper Retina XDR display,\nHDR display,True Tone\nWide colour (P3),Haptic Touch,/nCeramic Shield front Glass back and aluminium design";
+  //
+  /*Air pods*/
+  //
+  Image airpodImg = Image.asset("assets/images/a4.png",fit: BoxFit.cover, height: 220, width: 180);
+  String airpodPrice = "\$ 30.00";
+  String airpodDetails = "You can pair AirPods with your Apple devices to listen to music, movies, messages, and more. After you set up your AirPods with one Apple device (like your iPhone).";
+//
+  //
+  /*iWatch*/
+  //
+  Image iWatchImg = Image.asset("assets/images/watch3.png",fit: BoxFit.cover, height: 220, width: 180);
+  String iWatchPrice = "\$ 60.00";
+  String iWatchDetails = "The standard Apple Watch comes in two case sizes, 38mm or 42mm, with an OLED display with an ambient light sensor to combat glare. Apple offers a premium Apple Watch Edition,";
+  //
+  /*ipad*/
+  //
+  Image iPadImg = Image.asset("assets/images/ipad4.png",fit: BoxFit.cover, height: 190, width: 200);
+  String iPadPrice = "\$ 100.00";
+  String iPadDetails = "Multitasking with iPad is more intuitive and powerful than ever. Work seamlessly across apps. Use Slide Over or Split View to work with multiple apps at the same time, and even drag and drop content between apps with touch or a trackpad.";
+
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +76,10 @@ class _HomeState extends State<Home> {
           centerTitle: true,
           title: Text("apple",
               style: TextStyle(
-                  color: Colors.black, letterSpacing: 4, fontSize: 23,fontWeight: FontWeight.bold)),
+                  color: Colors.black,
+                  letterSpacing: 4,
+                  fontSize: 23,
+                  fontWeight: FontWeight.bold)),
           actions: [
             Padding(
               padding: const EdgeInsets.only(top: 18, right: 10),
@@ -62,6 +95,7 @@ class _HomeState extends State<Home> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            //SizedBox(height: 0,),
             //Text("Explore Product",style: TextStyle(color: c1,fontSize: 24,letterSpacing: 2),),
             //
             //
@@ -167,385 +201,411 @@ class _HomeState extends State<Home> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(12),
-                        child: Container(
-                          height: 400,
-                          width: 210,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: c4,
-                          ),
-                          child: Column(
-                            children: [
-                              //row for like and add to cart button
-                              Padding(
-                                padding: EdgeInsets.all(5),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Container(
-                                      height: 40,
-                                      width: 40,
-                                      decoration: BoxDecoration(
+                        child: InkWell(
+                          onTap: () {
+                            ModelDart md1 = ModelDart(iDetail: iphone13Details,iPrice: iphone13Price);
+                            Navigator.pushNamed(context, 'second',
+                                arguments: md1);
+                          },
+                          child: Container(
+                            height: 400,
+                            width: 210,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: c4,
+                            ),
+                            child: Column(
+                              children: [
+                                //row for like and add to cart button
+                                Padding(
+                                  padding: EdgeInsets.all(5),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Container(
+                                        height: 40,
+                                        width: 40,
+                                        decoration: BoxDecoration(),
+                                        child: FloatingActionButton(
+                                            onPressed: () {},
+                                            child: Icon(Icons.favorite),
+                                            backgroundColor: c3),
                                       ),
-                                      child: FloatingActionButton(
-                                          onPressed: () {},
-                                          child: Icon(Icons.favorite),
-                                          backgroundColor: c3),
-                                    ),
-                                    Container(
-                                      height: 40,
-                                      width: 40,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: c3,
+                                      Container(
+                                        height: 40,
+                                        width: 40,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: c3,
+                                        ),
+                                        child: Icon(Icons.shopping_bag,
+                                            color: Colors.white),
                                       ),
-                                      child: Icon(Icons.shopping_bag,color: Colors.white),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Image.asset("assets/images/iphone13.png",
-                                  fit: BoxFit.cover, height: 220, width: 180),
-                              Text("\$ 120.00",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18,
-                                  )),
-                              Align(
+                                Image.asset("assets/images/iphone13.png",
+                                    fit: BoxFit.cover, height: 220, width: 180),
+                                Text("\$ 120.00",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                    )),
+                                Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 20, top: 5, bottom: 2),
+                                      child: Text(
+                                        "iPhone13",
+                                        style: TextStyle(
+                                            fontSize: 25, color: Colors.black),
+                                      ),
+                                    )),
+                                Align(
                                   alignment: Alignment.centerLeft,
                                   child: Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 20, top: 5, bottom: 2),
-                                    child: Text(
-                                      "iPhone13",
-                                      style: TextStyle(
-                                          fontSize: 25, color: Colors.black),
-                                    ),
-                                  )),
-                              Align(
-                                alignment: Alignment.centerLeft,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 18, bottom: 2),
-                                  child: Image.asset(
-                                      "assets/images/rating4.png",
-                                      fit: BoxFit.fill,
-                                      height: 12,
-                                      width: 75),
+                                        left: 18, bottom: 2),
+                                    child: Image.asset(
+                                        "assets/images/rating4.png",
+                                        fit: BoxFit.fill,
+                                        height: 12,
+                                        width: 75),
+                                  ),
                                 ),
-                              ),
 
-                              Row(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 20, top: 10, bottom: 2),
-                                        child: Text(
-                                          "See all details",
-                                        ),
-                                      )),
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                             top: 10, bottom: 2),
-                                        child: Icon(Icons.navigate_next),
-                                      )),
-                                ],
-                              ),
-
-                            ],
+                                Row(
+                                  children: [
+                                    Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 20, top: 10, bottom: 2),
+                                          child: Text(
+                                            "See all details",
+                                          ),
+                                        )),
+                                    Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 10, bottom: 2),
+                                          child: Icon(Icons.navigate_next),
+                                        )),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(12),
-                        child: Container(
-                          height: 400,
-                          width: 210,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: c4,
-                          ),
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.all(5),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Container(
-                                      height: 40,
-                                      width: 40,
-                                      decoration: BoxDecoration(
+                        child: InkWell(
+                          onTap: () {
+                            ModelDart md1 = ModelDart(iDetail: airpodDetails,iPrice: airpodPrice);
+                            Navigator.pushNamed(context, 'second',arguments: md1);
+                          },
+                          child: Container(
+                            height: 400,
+                            width: 210,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: c4,
+                            ),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(5),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Container(
+                                        height: 40,
+                                        width: 40,
+                                        decoration: BoxDecoration(),
+                                        child: FloatingActionButton(
+                                            onPressed: () {},
+                                            child: Icon(Icons.favorite),
+                                            backgroundColor: c3),
                                       ),
-                                      child: FloatingActionButton(
-                                          onPressed: () {},
-                                          child: Icon(Icons.favorite),
-                                          backgroundColor: c3),
-                                    ),
-                                    Container(
-                                      height: 40,
-                                      width: 40,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: c3,
+                                      Container(
+                                        height: 40,
+                                        width: 40,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: c3,
+                                        ),
+                                        child: Icon(Icons.shopping_bag,
+                                            color: Colors.white),
                                       ),
-                                      child: Icon(Icons.shopping_bag,color: Colors.white),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Image.asset("assets/images/a4.png",
-                                  fit: BoxFit.cover, height: 220, width: 180),
-                              Text("\$ 30.00",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18,
-                                  )),
-                              Align(
+                                Image.asset("assets/images/a4.png",
+                                    fit: BoxFit.cover, height: 220, width: 180),
+                                Text("\$ 30.00",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                    )),
+                                Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 20, top: 5, bottom: 2),
+                                      child: Text(
+                                        "AirPods",
+                                        style: TextStyle(
+                                            fontSize: 25, color: Colors.black),
+                                      ),
+                                    )),
+                                Align(
                                   alignment: Alignment.centerLeft,
                                   child: Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 20, top: 5, bottom: 2),
-                                    child: Text(
-                                      "AirPods",
-                                      style: TextStyle(
-                                          fontSize: 25, color: Colors.black),
-                                    ),
-                                  )),
-                              Align(
-                                alignment: Alignment.centerLeft,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 18, bottom: 2),
-                                  child: Image.asset(
-                                      "assets/images/rating4.png",
-                                      fit: BoxFit.fill,
-                                      height: 12,
-                                      width: 75),
+                                        left: 18, bottom: 2),
+                                    child: Image.asset(
+                                        "assets/images/rating4.png",
+                                        fit: BoxFit.fill,
+                                        height: 12,
+                                        width: 75),
+                                  ),
                                 ),
-                              ),
-
-                              Row(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 20, top: 10, bottom: 2),
-                                        child: Text(
-                                          "See all details",
-                                        ),
-                                      )),
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                            top: 10, bottom: 2),
-                                        child: Icon(Icons.navigate_next),
-                                      )),
-                                ],
-                              ),
-
-                            ],
+                                Row(
+                                  children: [
+                                    Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 20, top: 10, bottom: 2),
+                                          child: Text(
+                                            "See all details",
+                                          ),
+                                        )),
+                                    Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 10, bottom: 2),
+                                          child: Icon(Icons.navigate_next),
+                                        )),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(12),
-                        child: Container(
-                          height: 400,
-                          width: 210,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: c4,
-                          ),
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.all(5),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Container(
-                                      height: 40,
-                                      width: 40,
-                                      decoration: BoxDecoration(
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              ModelDart md1 = ModelDart(iDetail: iWatchDetails,iPrice: iWatchPrice);
+                              Navigator.pushNamed(context, 'second',arguments: md1);
+                            });
+                          },
+                          child: Container(
+                            height: 400,
+                            width: 210,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: c4,
+                            ),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(5),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Container(
+                                        height: 40,
+                                        width: 40,
+                                        decoration: BoxDecoration(),
+                                        child: FloatingActionButton(
+                                            onPressed: () {},
+                                            child: Icon(Icons.favorite),
+                                            backgroundColor: c3),
                                       ),
-                                      child: FloatingActionButton(
-                                          onPressed: () {},
-                                          child: Icon(Icons.favorite),
-                                          backgroundColor: c3),
-                                    ),
-                                    Container(
-                                      height: 40,
-                                      width: 40,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: c3,
+                                      Container(
+                                        height: 40,
+                                        width: 40,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: c3,
+                                        ),
+                                        child: Icon(Icons.shopping_bag,
+                                            color: Colors.white),
                                       ),
-                                      child: Icon(Icons.shopping_bag,color: Colors.white),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              Image.asset("assets/images/watch3.png",
-                                  fit: BoxFit.cover, height: 220, width: 180),
-                              Text("\$ 60.00",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18,
-                                  )),
-                              Align(
+                                Image.asset("assets/images/watch3.png",
+                                    fit: BoxFit.cover, height: 220, width: 180),
+                                Text("\$ 60.00",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                    )),
+                                Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 20, top: 5, bottom: 2),
+                                      child: Text(
+                                        "iWatch",
+                                        style: TextStyle(
+                                            fontSize: 25, color: Colors.black),
+                                      ),
+                                    )),
+                                Align(
                                   alignment: Alignment.centerLeft,
                                   child: Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 20, top: 5, bottom: 2),
-                                    child: Text(
-                                      "iWatch",
-                                      style: TextStyle(
-                                          fontSize: 25, color: Colors.black),
-                                    ),
-                                  )),
-                              Align(
-                                alignment: Alignment.centerLeft,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 18, bottom: 2),
-                                  child: Image.asset(
-                                      "assets/images/rating4.png",
-                                      fit: BoxFit.fill,
-                                      height: 12,
-                                      width: 75),
+                                        left: 18, bottom: 2),
+                                    child: Image.asset(
+                                        "assets/images/rating4.png",
+                                        fit: BoxFit.fill,
+                                        height: 12,
+                                        width: 75),
+                                  ),
                                 ),
-                              ),
-
-                              Row(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 20, top: 10, bottom: 2),
-                                        child: Text(
-                                          "See all details",
-                                        ),
-                                      )),
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                            top: 10, bottom: 2),
-                                        child: Icon(Icons.navigate_next),
-                                      )),
-                                ],
-                              ),
-
-                            ],
+                                Row(
+                                  children: [
+                                    Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 20, top: 10, bottom: 2),
+                                          child: Text(
+                                            "See all details",
+                                          ),
+                                        )),
+                                    Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 10, bottom: 2),
+                                          child: Icon(Icons.navigate_next),
+                                        )),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(12),
-                        child: Container(
-                          height: 400,
-                          width: 210,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: c4,
-                          ),
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.all(5),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Container(
-                                      height: 40,
-                                      width: 40,
-                                      decoration: BoxDecoration(
+                        child: InkWell(
+                          onTap: () {
+                            ModelDart md1 = ModelDart(iDetail: iPadDetails,iPrice: iPadPrice);
+                            Navigator.pushNamed(context, 'second',arguments: md1);
+                          },
+                          child: Container(
+                            height: 400,
+                            width: 210,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: c4,
+                            ),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.all(5),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Container(
+                                        height: 40,
+                                        width: 40,
+                                        decoration: BoxDecoration(),
+                                        child: FloatingActionButton(
+                                            onPressed: () {},
+                                            child: Icon(Icons.favorite),
+                                            backgroundColor: c3),
                                       ),
-                                      child: FloatingActionButton(
-                                          onPressed: () {},
-                                          child: Icon(Icons.favorite),
-                                          backgroundColor: c3),
-                                    ),
-                                    Container(
-                                      height: 40,
-                                      width: 40,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: c3,
+                                      Container(
+                                        height: 40,
+                                        width: 40,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: c3,
+                                        ),
+                                        child: Icon(Icons.shopping_bag,
+                                            color: Colors.white),
                                       ),
-                                      child: Icon(Icons.shopping_bag,color: Colors.white),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              SizedBox(height: 10,),
-                              Image.asset("assets/images/ipad4.png",
-                                  fit: BoxFit.cover, height: 190, width: 200),
-                              SizedBox(height: 20,),
-                              Text("\$ 100.00",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18,
-                                  )),
-                              Align(
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Image.asset("assets/images/ipad4.png",
+                                    fit: BoxFit.cover, height: 190, width: 200),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Text("\$ 100.00",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                    )),
+                                Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 20, top: 5, bottom: 2),
+                                      child: Text(
+                                        "iPad",
+                                        style: TextStyle(
+                                            fontSize: 25, color: Colors.black),
+                                      ),
+                                    )),
+                                Align(
                                   alignment: Alignment.centerLeft,
                                   child: Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 20, top: 5, bottom: 2),
-                                    child: Text(
-                                      "iPad",
-                                      style: TextStyle(
-                                          fontSize: 25, color: Colors.black),
-                                    ),
-                                  )),
-                              Align(
-                                alignment: Alignment.centerLeft,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 18, bottom: 2),
-                                  child: Image.asset(
-                                      "assets/images/rating4.png",
-                                      fit: BoxFit.fill,
-                                      height: 12,
-                                      width: 75),
+                                        left: 18, bottom: 2),
+                                    child: Image.asset(
+                                        "assets/images/rating4.png",
+                                        fit: BoxFit.fill,
+                                        height: 12,
+                                        width: 75),
+                                  ),
                                 ),
-                              ),
-
-                              Row(
-                                children: [
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 20, top: 10, bottom: 2),
-                                        child: Text(
-                                          "See all details",
-                                        ),
-                                      )),
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(
-                                            top: 10, bottom: 2),
-                                        child: Icon(Icons.navigate_next),
-                                      )),
-                                ],
-                              ),
-
-                            ],
+                                Row(
+                                  children: [
+                                    Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 20, top: 10, bottom: 2),
+                                          child: Text(
+                                            "See all details",
+                                          ),
+                                        )),
+                                    Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                              top: 10, bottom: 2),
+                                          child: Icon(Icons.navigate_next),
+                                        )),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-
-
                     ],
                   ),
                 ),
@@ -572,10 +632,13 @@ class _HomeState extends State<Home> {
                           color: c3,
                           borderRadius: BorderRadius.circular(15),
                           border: Border.all(
-                            color: Colors.grey,style: BorderStyle.solid,width: 1,
+                            color: Colors.grey,
+                            style: BorderStyle.solid,
+                            width: 1,
                           ),
                         ),
-                        child: Icon(Icons.favorite_border,size: 35,color: Color(0xff362706) ),
+                        child: Icon(Icons.favorite_border,
+                            size: 35, color: Color(0xff362706)),
                       ),
                       Container(
                         height: 55,
@@ -584,10 +647,13 @@ class _HomeState extends State<Home> {
                           color: c3,
                           borderRadius: BorderRadius.circular(15),
                           border: Border.all(
-                            color: Colors.grey,style: BorderStyle.solid,width: 1,
+                            color: Colors.grey,
+                            style: BorderStyle.solid,
+                            width: 1,
                           ),
                         ),
-                        child: Icon(Icons.home,size: 35,color: Color(0xff362706) ),
+                        child: Icon(Icons.home,
+                            size: 35, color: Color(0xff362706)),
                       ),
                       Container(
                         height: 55,
@@ -596,10 +662,13 @@ class _HomeState extends State<Home> {
                           color: c3,
                           borderRadius: BorderRadius.circular(15),
                           border: Border.all(
-                            color: Colors.grey,style: BorderStyle.solid,width: 1,
+                            color: Colors.grey,
+                            style: BorderStyle.solid,
+                            width: 1,
                           ),
                         ),
-                        child: Icon(Icons.menu,size: 35,color: Color(0xff362706) ),
+                        child: Icon(Icons.menu,
+                            size: 35, color: Color(0xff362706)),
                       ),
                     ],
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_day19_namedroute/modelDart.dart';
 
 class Second extends StatefulWidget {
   const Second({Key? key}) : super(key: key);
@@ -25,15 +26,21 @@ class _SecondState extends State<Second> {
   double borderWidth2 = 2;
 
   //
+  //quantity inc/dec
+  int i=1;
 
   @override
   Widget build(BuildContext context) {
+    ModelDart m1 = ModalRoute.of(context)!.settings.arguments as ModelDart;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
           elevation: 0,
           backgroundColor: c3,
-          leading: Icon(Icons.arrow_back, color: Colors.black, size: 30),
+          leading: InkWell(onTap: () {
+            Navigator.pop(context);
+          },
+              child: Icon(Icons.arrow_back, color: Colors.black, size: 30)),
           centerTitle: true,
           title: Container(
             alignment: Alignment.center,
@@ -46,6 +53,9 @@ class _SecondState extends State<Second> {
               width: 30,
             ),
           ),
+          actions: [
+            Padding(padding: EdgeInsets.all(10),child: Text("iOS",style: TextStyle(color: c2,fontSize: 20))),
+          ],
         ),
         backgroundColor: c3,
         body: Column(
@@ -55,8 +65,8 @@ class _SecondState extends State<Second> {
                 height: 600,
                 width: 450,
                 decoration: BoxDecoration(
-                  //color: Colors.yellow,
-                ),
+                    //color: Colors.yellow,
+                    ),
                 child: Image.asset("assets/images/iphone13.png"),
               ),
             ),
@@ -88,7 +98,7 @@ class _SecondState extends State<Second> {
                     SizedBox(
                       height: 10,
                     ),
-                    Text("product detail"),
+                    Padding(padding: EdgeInsets.only(left: 20,right: 20),child: Text("${m1.iDetail}")),
                     SizedBox(
                       height: 10,
                     ),
@@ -114,44 +124,64 @@ class _SecondState extends State<Second> {
                         padding: const EdgeInsets.only(left: 25, top: 5),
                         child: Container(
                           height: 40,
-                          width: 130,
+                          width: 120,
                           decoration: BoxDecoration(
                             color: c4,
                             borderRadius: BorderRadius.circular(50),
                           ),
                           child: Row(
                             children: [
-                              Container(
-                                alignment: Alignment.center,
-                                height: 40,
-                                width: 40,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                      style: BorderStyle.solid,
-                                      color: c3,
-                                      width: 1),
-                                  shape: BoxShape.circle,
+                              InkWell(
+                                onTap : (){
+                                 setState(() {
+                                   if(i>1)
+                                   {
+                                     i--;
+                                   }
+                                 });
+                                },
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  height: 40,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                        style: BorderStyle.solid,
+                                        color: c3,
+                                        width: 1),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(Icons.remove),
                                 ),
-                                child: Icon(Icons.remove),
                               ),
                               Padding(
                                 padding:
                                     const EdgeInsets.only(left: 15, right: 15),
-                                child: Text("01"),
+                                child: Text("${i}"),
                               ),
-                              Container(
-                                alignment: Alignment.center,
-                                height: 40,
-                                width: 40,
-                                decoration: BoxDecoration(
-                                  color: c3,
-                                  border: Border.all(
-                                      style: BorderStyle.solid,
-                                      color: c3,
-                                      width: 1),
-                                  shape: BoxShape.circle,
+                              InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    if(i<9)
+                                    {
+                                      i++;
+                                    }
+                                  });
+                                },
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  height: 40,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                    color: c3,
+                                    border: Border.all(
+                                        style: BorderStyle.solid,
+                                        color: c3,
+                                        width: 1),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Icon(Icons.add),
                                 ),
-                                child: Icon(Icons.add),
                               ),
                             ],
                           ),
@@ -162,7 +192,7 @@ class _SecondState extends State<Second> {
                     Align(
                       alignment: Alignment.bottomLeft,
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 20,top: 30),
+                        padding: const EdgeInsets.only(left: 20, top: 30, right: 20),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -174,7 +204,8 @@ class _SecondState extends State<Second> {
                                 borderRadius: BorderRadius.circular(50),
                                 color: c4,
                               ),
-                              child: Text("\$ 154.00",style: TextStyle(color: c1,fontSize: 22)),
+                              child: Text("${m1.iPrice}",
+                                  style: TextStyle(color: c1, fontSize: 22)),
                             ),
                             Container(
                               alignment: Alignment.center,
@@ -184,7 +215,8 @@ class _SecondState extends State<Second> {
                                 borderRadius: BorderRadius.circular(50),
                                 color: c3,
                               ),
-                              child: Text("Add to cart",style: TextStyle(fontSize: 18,color: c1)),
+                              child: Text("Add to cart",
+                                  style: TextStyle(fontSize: 18, color: c1)),
                             ),
                           ],
                         ),

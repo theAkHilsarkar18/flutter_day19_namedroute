@@ -32,6 +32,7 @@ class _HomeState extends State<Home> {
   //
   /*iphone 13 details*/
   Image iphone13Img = Image.asset("assets/images/iphone13.png",fit: BoxFit.cover, height: 220, width: 180);
+  String iphone13ImgPath = "assets/images/iphone13.png";
   String iphone13Price = "\$ 120.00";
   String iphone13Details =
       "256GB,\nSuper Retina XDR display,\nHDR display,True Tone\nWide colour (P3),Haptic Touch,/nCeramic Shield front Glass back and aluminium design";
@@ -39,6 +40,7 @@ class _HomeState extends State<Home> {
   /*Air pods*/
   //
   Image airpodImg = Image.asset("assets/images/a4.png",fit: BoxFit.cover, height: 220, width: 180);
+  String airpodImgPath = "assets/images/a4.png";
   String airpodPrice = "\$ 30.00";
   String airpodDetails = "You can pair AirPods with your Apple devices to listen to music, movies, messages, and more. After you set up your AirPods with one Apple device (like your iPhone).";
 //
@@ -46,12 +48,14 @@ class _HomeState extends State<Home> {
   /*iWatch*/
   //
   Image iWatchImg = Image.asset("assets/images/watch3.png",fit: BoxFit.cover, height: 220, width: 180);
+  String iWatchImgPath = "assets/images/watch3.png";
   String iWatchPrice = "\$ 60.00";
   String iWatchDetails = "The standard Apple Watch comes in two case sizes, 38mm or 42mm, with an OLED display with an ambient light sensor to combat glare. Apple offers a premium Apple Watch Edition,";
   //
   /*ipad*/
   //
   Image iPadImg = Image.asset("assets/images/ipad4.png",fit: BoxFit.cover, height: 190, width: 200);
+  String iPadImhPath = "assets/images/ipad4.png";
   String iPadPrice = "\$ 100.00";
   String iPadDetails = "Multitasking with iPad is more intuitive and powerful than ever. Work seamlessly across apps. Use Slide Over or Split View to work with multiple apps at the same time, and even drag and drop content between apps with touch or a trackpad.";
 
@@ -203,7 +207,7 @@ class _HomeState extends State<Home> {
                         padding: const EdgeInsets.all(12),
                         child: InkWell(
                           onTap: () {
-                            ModelDart md1 = ModelDart(iDetail: iphone13Details,iPrice: iphone13Price);
+                            ModelDart md1 = ModelDart(iDetail: iphone13Details,iPrice: iphone13Price,iPath: iphone13ImgPath);
                             Navigator.pushNamed(context, 'second',
                                 arguments: md1);
                           },
@@ -305,7 +309,7 @@ class _HomeState extends State<Home> {
                         padding: const EdgeInsets.all(12),
                         child: InkWell(
                           onTap: () {
-                            ModelDart md1 = ModelDart(iDetail: airpodDetails,iPrice: airpodPrice);
+                            ModelDart md1 = ModelDart(iDetail: airpodDetails,iPrice: airpodPrice,iPath: airpodImgPath);
                             Navigator.pushNamed(context, 'second',arguments: md1);
                           },
                           child: Container(
@@ -405,7 +409,7 @@ class _HomeState extends State<Home> {
                         child: InkWell(
                           onTap: () {
                             setState(() {
-                              ModelDart md1 = ModelDart(iDetail: iWatchDetails,iPrice: iWatchPrice);
+                              ModelDart md1 = ModelDart(iDetail: iWatchDetails,iPrice: iWatchPrice,iPath: iWatchImgPath);
                               Navigator.pushNamed(context, 'second',arguments: md1);
                             });
                           },
@@ -505,7 +509,7 @@ class _HomeState extends State<Home> {
                         padding: const EdgeInsets.all(12),
                         child: InkWell(
                           onTap: () {
-                            ModelDart md1 = ModelDart(iDetail: iPadDetails,iPrice: iPadPrice);
+                            ModelDart md1 = ModelDart(iDetail: iPadDetails,iPrice: iPadPrice,iPath: iPadImhPath);
                             Navigator.pushNamed(context, 'second',arguments: md1);
                           },
                           child: Container(

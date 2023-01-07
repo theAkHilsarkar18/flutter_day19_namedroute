@@ -28,6 +28,9 @@ class _SecondState extends State<Second> {
   //
   //quantity inc/dec
   int i=1;
+  ///
+  /// like option effect
+  int e = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +70,7 @@ class _SecondState extends State<Second> {
                 decoration: BoxDecoration(
                     //color: Colors.yellow,
                     ),
-                child: Image.asset("assets/images/iphone13.png"),
+                child: Image.asset("${m1.iPath}"),
               ),
             ),
             Align(
@@ -207,16 +210,21 @@ class _SecondState extends State<Second> {
                               child: Text("${m1.iPrice}",
                                   style: TextStyle(color: c1, fontSize: 22)),
                             ),
-                            Container(
-                              alignment: Alignment.center,
-                              height: 50,
-                              width: 150,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: c3,
+                            InkWell(
+                              onTap: () {
+
+                              },
+                              child: Container(
+                                alignment: Alignment.center,
+                                height: 50,
+                                width: 150,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  color: c3,
+                                ),
+                                child: Text("Add to cart",
+                                    style: TextStyle(fontSize: 18, color: c1)),
                               ),
-                              child: Text("Add to cart",
-                                  style: TextStyle(fontSize: 18, color: c1)),
                             ),
                           ],
                         ),
